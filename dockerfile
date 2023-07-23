@@ -1,5 +1,5 @@
 FROM centos:7
-#As request, Higher version or Equal version from Centos 7
+# As request, Higher version or Equal version from Centos 7
 
 RUN yum -y update
 #First Update
