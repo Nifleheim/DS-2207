@@ -12,7 +12,6 @@ RUN yum -y install epel-release\
     yum -y install nodejs
 #Node Js Installation from EPEL Repository (0.10.47)
 
-
 WORKDIR /app
 #Set working directory for Node Js App
 
