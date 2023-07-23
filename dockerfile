@@ -21,6 +21,7 @@ COPY . .
 RUN yum install npm -y
 RUN npm init -y
 RUN npm install express
+#NPM and Express Js Installation
 
 EXPOSE 80
 #Expose Port "80" for Nginx Service
