@@ -1,5 +1,5 @@
 FROM centos:7
-# As request, Higher version or Equal version from Centos 7
+#As request, Higher version or Equal version from Centos 7
 
 RUN yum -y update
 #First Update
@@ -10,7 +10,7 @@ RUN yum -y install epel-release \
 
 RUN yum -y install epel-release\
     yum -y install nodejs
-#Node Js Installation 0.10.47 from EPEL Repository
+#Node Js Installation from EPEL Repository (Latest 0.10.47)
 
 
 WORKDIR /app
