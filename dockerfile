@@ -1,23 +1,36 @@
-FROM centos:7 
+FROM centos:7
+#As request, Higher version or Equal version from Centos 7
+
 RUN yum -y update
-# nginx dan postgresql
+#First Update
+
 RUN yum -y install epel-release \
     yum -y install nginx postgresql postgresql-server postgresql-contrib
-# Node.js 0.10.47 dari repositori EPEL
+#Nginx and Postgresql Installation from EPEL Repository
+
 RUN yum -y install epel-release\
     yum -y install nodejs
-# Set working directory untuk aplikasi Node.js (contoh)
+#Node Js Installation 0.10.47 from EPEL Repository
+
+
 WORKDIR /app
-# Contoh: Salin aplikasi Node.js ke dalam kontainer
+#Set working directory untuk aplikasi Node.js
+
 COPY . .
+#Copy All files to Container
+
 RUN yum install npm -y
 RUN npm init -y
 RUN npm install express
-# Expose port 80 untuk Nginx
+
 EXPOSE 80
-# Expose port 5432 untuk PostgreSQL
+#Expose Port 80 for Nginx Service
+
 EXPOSE 5432
-# Expose port 3000 untuk aplikasi Node.js
+#Expose Port 5432 for PostgreSQL Service
+
 EXPOSE 3000
-#Jalankan aplikasi Node.js
+#Expose Port 3000 for Node.js Service
+
 CMD ["node", "myapp/app.js"]
+#Running Node.js App
