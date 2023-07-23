@@ -1,5 +1,5 @@
 FROM centos:7
-#As request, Higher version or Equal version from Centos 7
+#As request, The OS image from Higher version or Equal version of Centos 7
 
 RUN yum -y update
 #First Update
@@ -10,11 +10,11 @@ RUN yum -y install epel-release \
 
 RUN yum -y install epel-release\
     yum -y install nodejs
-#Node Js Installation from EPEL Repository (Latest 0.10.47)
+#Node Js Installation from EPEL Repository (0.10.47)
 
 
 WORKDIR /app
-#Set working directory untuk aplikasi Node.js
+#Set working directory for Node Js App
 
 COPY . .
 #Copy All files to Container
@@ -24,13 +24,13 @@ RUN npm init -y
 RUN npm install express
 
 EXPOSE 80
-#Expose Port 80 for Nginx Service
+#Expose Port "80" for Nginx Service
 
 EXPOSE 5432
-#Expose Port 5432 for PostgreSQL Service
+#Expose Port "5432" for PostgreSQL Service
 
 EXPOSE 3000
-#Expose Port 3000 for Node.js Service
+#Expose Port "3000" for Node Js Service
 
 CMD ["node", "myapp/app.js"]
-#Running Node.js App
+#Running Node Js App
