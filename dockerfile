@@ -2,7 +2,7 @@ FROM centos:7
 #As request, The OS image from Higher version or Equal version of Centos 7
 
 RUN yum -y update
-#First Update
+#Update the local repository index of Yum
 
 RUN yum -y install epel-release \
     yum -y install nginx postgresql postgresql-server postgresql-contrib
